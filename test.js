@@ -168,11 +168,11 @@ describe('wait-for-throwable', () => {
       throw new Error('oranges');
     });
 
-    const promise = lib(func, { count: 8 });
+    const promise = lib(func, { count: 8, total: 3000000 });
 
     const [[err]] = await Promise.all([
       safe(promise),
-      clock.tickAsync(2010)
+      clock.tickAsync(8 * 5)
     ]);
 
     expect(func.callCount).to.equal(8);
