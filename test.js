@@ -16,6 +16,19 @@ describe('wait-for-throwable', () => {
     clock.restore();
   });
 
+  // sinon's tickAsync increments by 6ms per tick, so the if the total time is not a
+  // multime of 6, it will increment 1 less time than execpted, so make sure we are
+  // just over our intended time so that it actually reaches that expected time
+  const asyncTime = target => {
+    let result = 0;
+
+    while (result < target) {
+      result += 6;
+    }
+
+    return result;
+  };
+
   it('succeeds first try (on the leading edge) if it does not throw', async () => {
     const func = sinon.fake();
 
@@ -88,7 +101,7 @@ describe('wait-for-throwable', () => {
 
     const [[err]] = await Promise.all([
       safe(promise),
-      clock.tickAsync(2010)
+      clock.tickAsync(asyncTime(2000))
     ]);
 
     expect(err).to.be.instanceOf(Error).and.to.have.property('message', `pineapples ${func.callCount}`);
@@ -105,7 +118,7 @@ describe('wait-for-throwable', () => {
 
     const [[err]] = await Promise.all([
       safe(promise),
-      clock.tickAsync(2010)
+      clock.tickAsync(asyncTime(2000))
     ]);
 
     expect(err).to.equal(`${func.callCount}`);
@@ -157,7 +170,7 @@ describe('wait-for-throwable', () => {
 
     const [[err]] = await Promise.all([
       safe(promise),
-      clock.tickAsync(2000)
+      clock.tickAsync(asyncTime(2000))
     ]);
 
     expect(err).to.be.instanceOf(Error).and.to.have.property('message', 'strawberries');
