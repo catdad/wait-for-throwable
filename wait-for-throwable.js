@@ -11,12 +11,12 @@ const waitForThrowable = async (func, { interval = 5, total = 2000, count = Infi
     try {
       return await func();
     } catch (e) {
-      if (!(Date.now() <= end && c < count)) {
+      if (!(Date.now() < end && c < count)) {
         throw e;
       }
-
-      await sleep(interval);
     }
+
+    await sleep(interval);
   }
 };
 
