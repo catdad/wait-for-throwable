@@ -26,7 +26,7 @@ Retries the provided method until it succeeds. The method is executed immediatel
 
 The arguments are:
 * `method {Function}`: the method to retrym which can be a synchronous method or a promise-returning (or `async`) method
-* `[options] {Object}` _options_: options that define the behavior of the retries. All
+* `[options] {Object}`: options that define the behavior of the retries. Everything is optional.
   * `[interval = 5] {Number}`: the amount of time to wait between retries
   * `[total = 2000] {Number}`: the total amount of time to retry. If this is used along with `count`, retries will stop at whichever value is reached first.
   * `[count = Infinity] {Number}`: the maximum number of times to retry. If this is used along with `total`, retries will stop at whichever value is reached first.
