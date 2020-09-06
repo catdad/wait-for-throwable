@@ -1,5 +1,15 @@
 # wait-for-throwable
 
+[![travis][travis.svg]][travis.link]
+[![npm-downloads][npm-downloads.svg]][npm.link]
+[![npm-version][npm-version.svg]][npm.link]
+
+[travis.svg]: https://travis-ci.com/catdad/wait-for-throwable.svg?branch=master
+[travis.link]: https://travis-ci.com/catdad/wait-for-throwable
+[npm-downloads.svg]: https://img.shields.io/npm/dm/wait-for-throwable.svg
+[npm.link]: https://www.npmjs.com/package/wait-for-throwable
+[npm-version.svg]: https://img.shields.io/npm/v/wait-for-throwable.svg
+
 This method was inspired by built-in wait utilities in test frameworks, such as [`waitFor` in testing-library](https://testing-library.com/docs/dom-testing-library/api-async#waitfor), [`waitUntil` in webdriverIO](https://webdriver.io/docs/api/browser/waitUntil.html), or [`waitFor` in puppeteer](https://pptr.dev/#?product=Puppeteer&version=v5.2.1&show=api-pagewaitforselectororfunctionortimeout-options-args). However, this module uses a standalone and generic implementation, allowing you to wait for and retry any function, both synchronous or Promise-based. You can use this in your tests directly with your favorite assertion helper.
 
 ## Install
