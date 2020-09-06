@@ -1,6 +1,6 @@
 {
   "name": "wait-for-throwable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple utility to retry an erroring function until it succeeds",
   "main": "wait-for-throwable.js",
   "files": [
