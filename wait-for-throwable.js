@@ -5,7 +5,7 @@ const waitForThrowable = async (func, { interval = 5, total = 2000, count = Infi
   let error;
   let c = 0;
 
-  while (Date.now() < end || c < count) {
+  while (Date.now() < end && c < count) {
     c += 1;
 
     try {
