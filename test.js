@@ -157,7 +157,7 @@ describe('wait-for-throwable', () => {
 
     const [[err]] = await Promise.all([
       safe(promise),
-      clock.tickAsync(2010)
+      clock.tickAsync(2000)
     ]);
 
     expect(err).to.be.instanceOf(Error).and.to.have.property('message', 'strawberries');
