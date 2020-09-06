@@ -19,7 +19,6 @@
     "type": "git",
     "url": "git+https://github.com/catdad/wait-for-throwable.git"
   },
-  "keywords": [],
   "author": "Kiril Vatev <vatev.1@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -28,5 +27,18 @@
   "homepage": "https://github.com/catdad/wait-for-throwable#readme",
   "engines": {
     "node": ">=10.0.0"
-  }
+  },
+  "keywords": [
+    "wait",
+    "waitFor",
+    "waitUntil",
+    "test",
+    "promise",
+    "mocha",
+    "jest",
+    "assert",
+    "assertion",
+    "expect",
+    "chai"
+  ]
 }
