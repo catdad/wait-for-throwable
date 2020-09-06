@@ -4,7 +4,9 @@
   "description": "Simple utility to retry an erroring function until it succeeds",
   "main": "wait-for-throwable.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
