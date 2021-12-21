@@ -25,7 +25,7 @@ npm install wait-for-throwable
 Retries the provided method until it succeeds. The method is executed immediately, and if it fails, is retries at a defined internal until the total amount of wait time is reached. If the method succeeds at any time during the retries, the promise will resolve with the resulting value of the method. If the method continues to fail when the total timeout is reached, no more retries will occur and the promise will be rejected with the latest failure.
 
 The arguments are:
-* `method {Function}`: the method to retrym which can be a synchronous method or a promise-returning (or `async`) method
+* `method {Function}`: the method to retry, which can be a synchronous method or a promise-returning (or `async`) method
 * `[options] {Object}`: options that define the behavior of the retries. Everything is optional.
   * `[interval = 5] {Number}`: the amount of time to wait between retries
   * `[total = 2000] {Number}`: the total amount of time to retry. If this is used along with `count`, retries will stop at whichever value is reached first.
